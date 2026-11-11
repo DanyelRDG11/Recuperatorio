@@ -1,0 +1,43 @@
+Alumno: Gonzalo Eduardo Daniel Márquez
+grupo: 2
+direccion del repositorio:
+
+
+
+
+
+# DNS de Google
+$ip = "8.8.8.8"
+
+Write-Host "Arrancando prueba de conexion contra $ip ..."
+Write-Host ""
+
+# 3 intentos de ping
+for ($intento = 1; $intento -le 3; $intento++) {
+
+    $ahora = Get-Date
+    Write-Host "Intento $intento - $ahora"
+
+    # par o impar
+    $resto = $intento % 2
+    if ($resto -eq 0) {
+        Write-Host "  (intento par, toca verificar de nuevo)"
+    }
+    else {
+        Write-Host "  (intento impar, seguimos chequeando)"
+    }
+
+    # hago el ping, -Quiet devuelve true o false
+    $ok = Test-Connection -ComputerName $ip -Count 1 -Quiet
+
+    if ($ok -eq $true) {
+        Write-Host "  Hay respuesta de $ip" 
+    }
+    else {
+        Write-Host "  No hubo respuesta de $ip"
+    }
+
+    Write-Host ""
+}
+
+Write-Host "Listo, el monitoreo termino bien."
