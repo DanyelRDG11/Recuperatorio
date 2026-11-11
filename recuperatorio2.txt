@@ -1,6 +1,8 @@
 Alumno: Gonzalo Eduardo Daniel Márquez
 grupo: 2
-direccion del repositorio:
+direccion del repositorio:https://github.com/DanyelRDG11/Recuperatorio.git
+
+#Recuperatorio 2
 
 
 
